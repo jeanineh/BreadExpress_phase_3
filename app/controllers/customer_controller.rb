@@ -1,6 +1,20 @@
 class CustomerController < ApplicationController
   # A callback to set up an @owner object to work with 
   before_action :set_owner, only: [:show, :edit, :update, :destroy]
+
+  def index 
+     @customers = Customer.active.alphabetical.paginate(:page => params[:page]).per_page(10)
+  end
+
+  def create 
+    @customer = Customer.new(customer_params)
+    if @customer.save
+      redirect_to customer_path(@customer), notice: "#{@customer.name} was added to the system."
+    else
+      render action: 'new'
+    end
+  end
+
   def show
   end
 
@@ -8,9 +22,16 @@ class CustomerController < ApplicationController
   end
 
   def update
+    if @customer.update(customer_params)
+      redirect_to customer_path(@customer), notice: "#{@customer.name} was revised in the system."
+    else
+      render action: 'edit'
+    end
   end
 
   def destroy
+    @customer.destroy
+    redirect_to customers_url
   end
 
   private
