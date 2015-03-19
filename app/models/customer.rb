@@ -1,4 +1,4 @@
-class Customer < ActiveRecord::Base
+  class Customer < ActiveRecord::Base
   
   # Relationships
   has_many :orders
