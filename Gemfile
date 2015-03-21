@@ -34,6 +34,11 @@ group :development do
   gem 'faker', '1.4.3'
 end
 
+gem 'bundler', '>= 1.7.0' # needed for rails-assets-materialize
+source 'https://rails-assets.org' do
+  gem 'rails-assets-materialize'
+end
+
 # Gems used only in testing
 group :test do
   gem 'shoulda', '3.5.0'
