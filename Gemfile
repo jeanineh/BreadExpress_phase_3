@@ -39,6 +39,8 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-materialize'
 end
 
+gem 'simple_form'
+
 # Gems used only in testing
 group :test do
   gem 'shoulda', '3.5.0'
