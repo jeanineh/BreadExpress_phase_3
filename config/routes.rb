@@ -10,6 +10,7 @@ BreadExpress::Application.routes.draw do
   
   # Resource routes (maps HTTP verbs to controller actions automatically):
   resources :customers
-  
+  resources :orders
+  resources :addresses
   root to: 'home#index', as: :home
 end
