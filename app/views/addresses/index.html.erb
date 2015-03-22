@@ -1,2 +1,51 @@
-<h1>Addresses#index</h1>
-<p>Find me in app/views/addresses/index.html.erb</p>
+<h1>Addresses</h1><br />
+<br><h4>Active Addresses</h4><br />
+<table class="hoverable">
+  <thead>
+    <th>Customer</th>
+    <th>Recipient</th>
+    <th>Address</th>
+    <th>Billing?</th>
+  </thead>
+  <% for address in @active_addresses %>
+    <tr>
+      <td><%= address.for_customer(customer_id).name %></td>
+      <td><%= address.name %>)</td>
+      <td><%= address.street_1 %><br><%= address.city %>, <%= address.state %> <%= address.zip %></td>
+      <td><%= address.is_billing? %>
+	  <td align="center">
+		<%= link_to(image_tag("icons/edit_dg.gif", border: 0), edit_address_path(address))  %>&nbsp;
+		<%= link_to(image_tag("icons/delete_dg.gif", border: 0), address_path(address), confirm: 'Are you sure you wish to delete this information?', method: :delete) %>
+	  </td>
+    </tr>
+  <% end %>
+</table>
+<br><h4>Inactive Addresses</h4><br />
+<table class="hoverable">
+  <thead>
+    <th>Customer</th>
+    <th>Recipient</th>
+    <th>Address</th>
+    <th>Billing?</th>
+  </thead>
+  <% for address in @inactive_addresses %>
+    <tr>
+      <td><%= address.for_customer(customer_id).name %></td>
+      <td><%= address.name %>)</td>
+      <td><%= address.street_1 %><br><%= address.city %>, <%= address.state %> <%= address.zip %></td>
+      <td><%= address.is_billing? %></td>
+	  <td align="center">
+		<%= link_to(image_tag("icons/edit_dg.gif", border: 0), edit_address_path(address))  %>&nbsp;
+		<%= link_to(image_tag("icons/delete_dg.gif", border: 0), address_path(address), confirm: 'Are you sure you wish to delete this information?', method: :delete) %>
+	  </td>
+    </tr>
+  <% end %>
+</table>
+<p class="supertiny"></p>
+
+<!-- Add the pagination using will_paginate gem -->
+<span class="smtext">
+<%= will_paginate @addresses, previous_label: "Previous&nbsp;", next_label: "&nbsp;Next" %>
+</span>
+
+<p><strong><%= link_to "Add A New Address", new_address_path %></strong></p>

@@ -21,6 +21,7 @@ class CustomersController < ApplicationController
 
   def show
     @current_orders = @customer.orders.chronological.to_a
+    @current_addresses = @customer.addresses.by_recipient.to_a
   end
 
   def edit

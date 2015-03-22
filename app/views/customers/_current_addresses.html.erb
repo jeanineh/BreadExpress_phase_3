@@ -1,0 +1,19 @@
+<h2>Addresses:</h2>
+<table class="hoverable">
+  <thead>
+    <tr>
+      <th>Street</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip</th>
+      <th>Recipient</th>
+    </tr>
+  </thead>
+<% for order in @current_orders %>
+  <tr>
+    <td>&nbsp;<%= link_to order.date, order_path(order) %></td>
+	  <td>&nbsp;<%= order.grand_total %></td>
+  </tr>
+<% end %>
+</table>
+<p class="supertiny">&nbsp;</p>
