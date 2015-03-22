@@ -20,6 +20,7 @@ class CustomersController < ApplicationController
   end
 
   def show
+    @current_orders = @customer.orders.chronological.to_a
   end
 
   def edit

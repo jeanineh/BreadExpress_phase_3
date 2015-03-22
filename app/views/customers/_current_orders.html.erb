@@ -1,0 +1,16 @@
+<h2>Order History:</h2>
+<table class="hoverable">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th<>Amount</th>
+    </tr>
+  </thead>
+<% for order in @current_orders %>
+  <tr>
+    <td>&nbsp;<%= link_to order.date, order_path(order) %></td>
+	<td>&nbsp;<%= order.grand_total %></td>
+  </tr>
+<% end %>
+</table>
+<p class="supertiny">&nbsp;</p>

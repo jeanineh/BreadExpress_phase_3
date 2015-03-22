@@ -1,0 +1,14 @@
+<h2>Customer Information</h2>
+<h4><%= @customer.first_name %> <%= @customer.last_name %></h4>
+
+<b>Phone:&nbsp;&nbsp;</b><br>
+  <%= number_to_phone(@customer.phone) %><br /><br />
+
+<b>Email:&nbsp;&nbsp;</b><br>
+  <%= mail_to @customer.email, @customer.email, encode: "javascript" %><br /><br />
+
+<b>Orders:&nbsp;&nbsp;</b><br>
+  <%= @current_orders %><br /><br />
+
+<b>Active with BreadExpress?:&nbsp;&nbsp;</b>
+  <%= @customer.active %>
