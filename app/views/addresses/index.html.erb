@@ -11,12 +11,15 @@
     <tr>
       <td><%= address.customer.name %></td>
       <td><%= address.recipient %></td>
-      <td><%= address.street_1 %><br><%= address.city %>, <%= address.state %> <%= address.zip %></td>
+      <td><%= address.street_1 %>
+          <% unless address.street_2 == nil %>
+            <%= address.street_2 %>
+          <% end %>
+          <br><%= address.city %>, <%= address.state %> <%= address.zip %>
+      </td>
       <td><%= address.is_billing? %>
-	  <td align="center">
-		<%= link_to(image_tag("icons/edit_dg.gif", border: 0), edit_address_path(address))  %>&nbsp;
-		<%= link_to(image_tag("icons/delete_dg.gif", border: 0), address_path(address), confirm: 'Are you sure you wish to delete this information?', method: :delete) %>
-	  </td>
+		  <td><%= link_to('Edit' , edit_address_path(address)) %></td>
+		  <td><%= link_to('Delete', address_path(address), confirm: 'Are you sure you wish to delete this information?', method: :delete) %></td>
     </tr>
   <% end %>
 </table>
@@ -30,9 +33,14 @@
   </thead>
   <% for address in @inactive_addresses %>
     <tr>
-      <td><%= address.for_customer(customer_id).name %></td>
-      <td><%= address.name %>)</td>
-      <td><%= address.street_1 %><br><%= address.city %>, <%= address.state %> <%= address.zip %></td>
+      <td><%= address.customer.name %></td>
+      <td><%= address.recipient %></td>
+      <td><%= address.street_1 %>
+          <% unless address.street_2 == nil %>
+            <%= address.street_2 %><br /><br />
+          <% end %>
+          <br><%= address.city %>, <%= address.state %> <%= address.zip %>
+      </td>
       <td><%= address.is_billing? %></td>
 	  <td align="center">
 		<%= link_to(image_tag("icons/edit_dg.gif", border: 0), edit_address_path(address))  %>&nbsp;

@@ -1,0 +1,28 @@
+
+<h4>Address was successfully added to the system.</h4>
+<table>
+  <tr>
+    <b>Recipient:&nbsp;&nbsp;</b><br />
+    <%= @address.recipient %><br /><br />
+  </tr>
+
+  <tr>
+    <b>Address:&nbsp;&nbsp;</b><br />
+    <%= @address.street_1 %><br /><%= @address.city %>, <%= @address.state %> <%= @address.zip %><br /><br />
+  </tr>
+  <tr>
+    <% unless @address.street_2 == nil %>
+     <b>Address 2:&nbsp;&nbsp;</b>
+     <%= @address.street_2 %><br /><br />
+    <% end %>
+  </tr>
+</table>
+
+
+  
+
+  <%= link_to "Edit", edit_address_path(@address) %> |
+  <%= link_to "Destroy", @address, confirm: 'Are you sure?', method: :delete %> |
+  <%= link_to "View All", addresses_path %>
+</td>
+<td width="10">&nbsp;</td>
