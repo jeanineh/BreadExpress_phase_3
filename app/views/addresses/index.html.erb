@@ -17,7 +17,12 @@
           <% end %>
           <br><%= address.city %>, <%= address.state %> <%= address.zip %>
       </td>
-      <td><%= address.is_billing? %>
+      <td><% unless address.is_billing == true %>
+            <%= "No" %>
+          <% else %>
+            <%= "Yes" %>
+          <% end %>
+      </td>
 		  <td><%= link_to('Edit' , edit_address_path(address)) %></td>
 		  <td><%= link_to('Delete', address_path(address), confirm: 'Are you sure you wish to delete this information?', method: :delete) %></td>
     </tr>
@@ -37,11 +42,16 @@
       <td><%= address.recipient %></td>
       <td><%= address.street_1 %>
           <% unless address.street_2 == nil %>
-            <%= address.street_2 %><br /><br />
+            <%= address.street_2 %>
           <% end %>
           <br><%= address.city %>, <%= address.state %> <%= address.zip %>
       </td>
-      <td><%= address.is_billing? %></td>
+      <td><% unless address.is_billing == true %>
+            <%= "No" %>
+          <% else %>
+            <%= "Yes" %>
+          <% end %>
+      </td>
 	  <td align="center">
 		<%= link_to(image_tag("icons/edit_dg.gif", border: 0), edit_address_path(address))  %>&nbsp;
 		<%= link_to(image_tag("icons/delete_dg.gif", border: 0), address_path(address), confirm: 'Are you sure you wish to delete this information?', method: :delete) %>
