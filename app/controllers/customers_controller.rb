@@ -3,7 +3,7 @@ class CustomersController < ApplicationController
   before_action :set_customer, only: [:show, :edit, :update, :destroy]
 
   def index 
-     @customers = Customer.active.alphabetical.paginate(:page => params[:page]).per_page(10)
+     @customers = Customer.alphabetical.paginate(:page => params[:page]).per_page(10)
   end
 
   def create 

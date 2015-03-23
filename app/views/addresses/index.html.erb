@@ -52,7 +52,7 @@
             <%= "Yes" %>
           <% end %>
       </td>
-		  <td><%= link_to('Edit' , edit_address_path(address)) %></td>
+      <td><%= link_to('Edit' , edit_address_path(address)) %></td>
       <td><%= link_to('Delete', address_path(address), confirm: 'Are you sure you wish to delete this information?', method: :delete) %></td>
     </tr>
   <% end %>

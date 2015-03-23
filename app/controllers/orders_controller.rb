@@ -14,7 +14,7 @@ before_action :set_order, only: [:show, :edit, :update, :destroy]
   end
 
   def show
-  	#@orders = Order.for_customer(@customer.id).paginate(page: params[:page]).per_page(10)
+  	
   end
 
   def create
@@ -36,7 +36,7 @@ before_action :set_order, only: [:show, :edit, :update, :destroy]
 
   def destroy
     @order.destroy
-    redirect_to orders_url
+    redirect_to orders_url, notice: "Order was deleted from the system."
   end
 
   private
@@ -46,6 +46,6 @@ before_action :set_order, only: [:show, :edit, :update, :destroy]
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:date, :grand_total)
+      params.require(:order).permit(:date, :customer_id, :address_id, :grand_total)
     end
 end
