@@ -5,9 +5,9 @@ class AddressesController < ApplicationController
   end
 
   def index
-  	@addresses = Address.by_recipient.paginate(page: params[:page]).per_page(10)
-  	@active_addresses = Address.active.paginate(page: params[:page]).per_page(10)
-  	@inactive_addresses = Address.inactive.paginate(page: params[:page]).per_page(10)
+    @addresses = Address.by_customer.paginate(page: params[:page]).per_page(10)
+  	@active_addresses = Address.active.by_customer.paginate(page: params[:page]).per_page(10)
+  	@inactive_addresses = Address.inactive.by_customer.paginate(page: params[:page]).per_page(10)
   end
 
   def new
@@ -36,7 +36,7 @@ class AddressesController < ApplicationController
 
   def destroy
     @address.destroy
-    redirect_to address_url
+    redirect_to addresses_url, nocie: "Removed address from system."
   end
 
   private
@@ -46,6 +46,6 @@ class AddressesController < ApplicationController
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def address_params
-      params.require(:address).permit(:customer_id, :street_1, :zip, :state, :recipient, :active)
+      params.require(:address).permit(:customer_id, :street_1, :zip, :state, :recipient, :city, :active)
     end
 end

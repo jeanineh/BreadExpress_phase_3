@@ -9,8 +9,8 @@
   </thead>
   <% for address in @active_addresses %>
     <tr>
-      <td><%= address.for_customer(customer_id).name %></td>
-      <td><%= address.name %>)</td>
+      <td><%= address.customer.name %></td>
+      <td><%= address.recipient %></td>
       <td><%= address.street_1 %><br><%= address.city %>, <%= address.state %> <%= address.zip %></td>
       <td><%= address.is_billing? %>
 	  <td align="center">

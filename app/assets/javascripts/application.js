@@ -15,12 +15,9 @@
 //= require jquery-ui
 //= require materialize
 //= require_tree .
-$(function(){
-    $(function(){
-      $(".dropdown-button").dropdown({ constrain_width: false });
-      $('select').material_select();
-    });
-  });
+
 $(document).ready(function(){
      $('.slider').slider({full_width: true});
+     $(".dropdown-button").dropdown({ constrain_width: false });
+     $('select').material_select();
    });
