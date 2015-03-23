@@ -42,4 +42,12 @@ class Address < ActiveRecord::Base
     end
   end
 
+  def name
+    unless street_2.nil?
+      "#{self.street_1}, #{self.city}, #{self.state} #{self.zip}"
+    else
+      "#{self.street_1} #{self.street_2}, #{self.city}, #{self.state} #{self.zip}"
+    end
+  end
+
 end

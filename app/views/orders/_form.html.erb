@@ -1,0 +1,27 @@
+<div class="container">
+<div class="col s12">
+<%= simple_form_for(@order, html: { class: 'form-horizontal' }) do |f| %>
+  <fieldset>
+    <legend><%= controller.action_name.capitalize %> Order</legend>
+      <div class="row">
+        <div class="input-field col s6">
+          <%= f.association :customer %>
+        </div>
+        <div class="input-field col s6">
+          <%= f.association :address, label_method: :name %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s4">
+          <%= f.input :grand_total, label: 'Enter the amount to pay' %>
+        </div>
+      </div>
+      <div class="form-actions">
+        <%= f.submit nil, class: 'btn' %>
+        <%= link_to 'Cancel', orders_path, :class => 'btn deep-orange lighten-3' %>
+      </div>
+      <%= link_to 'Back', orders_path %>
+    </fieldset>
+  <% end %>
+</div>
+</div>
