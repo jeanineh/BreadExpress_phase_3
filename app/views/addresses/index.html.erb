@@ -12,7 +12,7 @@
   </thead>
   <% for address in @active_addresses %>
     <tr>
-      <td><%= link_to(address.customer.name, customer_path(address.customer)) %></td>
+      <td><%= link_to(address.customer.proper_name, customer_path(address.customer)) %></td>
       <td><%= address.recipient %></td>
       <td><%= address.street_1 %>
           <% unless address.street_2 == nil %>
@@ -41,7 +41,7 @@
   </thead>
   <% for address in @inactive_addresses %>
     <tr>
-      <td><%= link_to(address.customer.name, customer_path(address.customer)) %></td>
+      <td><%= link_to(address.customer.proper_name, customer_path(address.customer)) %></td>
       <td><%= address.recipient %></td>
       <td><%= address.street_1 %>
           <% unless address.street_2 == nil %>
