@@ -20,7 +20,7 @@ class AddressesController < ApplicationController
   def create
   	@address = Address.new(address_params)
   	if @address.save
-  	  redirect_to @address, notice: "Successfully added address in the system."
+  	  redirect_to @address, notice: "Address was added to the system."
     else
       render action: 'new'
     end

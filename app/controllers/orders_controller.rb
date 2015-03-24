@@ -18,14 +18,14 @@ before_action :set_order, only: [:show, :edit, :update, :destroy]
   end
 
   def create
-  	@order = Order.new(order_params)
-  	if @order.save
+    @order = Order.new(order_params)
+    if @order.save
       @order.date = Date.today.strftime('%x')
       @order.pay
-  		redirect_to @order, notice: "Thank you for ordering from Bread Express."
-  	else 
-  		render action: 'new'
-  	end
+      redirect_to @order, notice: "Thank you for ordering from Bread Express."
+    else 
+      render action: 'new'
+    end
   end
 
   def update
