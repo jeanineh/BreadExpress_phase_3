@@ -1,0 +1,15 @@
+
+<table class="hoverable">
+  <thead>
+    <th>Date</th>
+    <th>Amount</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @order.date.strftime('%x') %></td>
+      <td><%= sprintf "%.2f", @order.grand_total %></td>
+    </tr>
+
+  </tbody>
+</table>
+

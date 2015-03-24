@@ -5,13 +5,22 @@
     <legend><%= controller.action_name.capitalize %> Order</legend>
       <div class="row">
         <div class="input-field col s6">
-          <%= f.association :customer, collection: Customer.active.all.to_a %>
+          <%= f.association :customer, collection: Customer.active.to_a %>
         </div>
         <div class="input-field col s6">
-          <%= f.association :address, collection: Address.active.all.to_a, label_method: :name %>
+          <%= f.association :address, collection: Address.active.to_a, label_method: :name %>
         </div>
       </div>
       <div class="row">
+        <div class="col s6">
+          <table>
+            <thead>Items in your shopping cart:</thead>
+              <tr><td>1 loaf of Honey Wheat</td></tr>
+              <tr><td>1 loaf of Cinammon Swirl</td></tr>
+              <tr><td>1 loaf of Sourdough Bread</td></tr>
+              <tr><td>1 dozen Blueberry Muffins</td></tr>
+          </table>
+        </div>
         <div class="input-field col s4">
           <%= f.input :grand_total, label: 'Enter the amount to pay' %>
         </div>

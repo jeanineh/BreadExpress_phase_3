@@ -44,5 +44,4 @@ class Order < ActiveRecord::Base
   def generate_payment_receipt
     self.payment_receipt = Base64.encode64("order: #{self.id}; amount_paid: #{self.grand_total}; received: #{self.date}")
   end
-
 end

@@ -1,18 +1,24 @@
+<% if @orders.empty? %>
+ <h4>There are no orders at this time.</h4>
+<% else %>
 <h3>All Orders</h3>
 
 <table>
-  <tr>
-    <th>Date</th>
-    <th>Customer</th>
-    <th>Recipient</th>
-    <th>Cost</th>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Customer</th>
+      <th>Recipient</th>
+      <th>Cost</th>
+    </tr>
+  </thead>
 
-  </tr>
-
-<% @orders.each do |order| %>
+<% for order in @orders %>
   <tr>
-    <td><%= order.date %>
+    <td><%= link_to order.date.strftime('%x'), order_path(order) %>
     <td><%= link_to order.customer.name, customer_path(order.customer) %></td>
+    <td><%= order.address.recipient %></td>
+    <td>$<%= sprintf "%.2f", order.grand_total %></td>
     <td><%= link_to 'Edit', edit_order_path(order) %></td>
     <td><%= link_to 'Destroy', order, data: { confirm: 'Are you sure?' }, method: :delete %></td>
   </tr>
@@ -25,5 +31,6 @@
 </span>
 
 <br />
+<% end %>
 
 <%= link_to 'New Order', new_order_path %>
