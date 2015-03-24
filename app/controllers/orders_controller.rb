@@ -19,9 +19,8 @@ before_action :set_order, only: [:show, :edit, :update, :destroy]
 
   def create
     @order = Order.new(order_params)
+    @order.date = Date.today
     if @order.save
-      @order.date = Date.today.strftime('%x')
-      @order.pay
       redirect_to @order, notice: "Thank you for ordering from Bread Express."
     else 
       render action: 'new'

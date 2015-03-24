@@ -8,7 +8,7 @@
     <th></th>
     <th></th>
   </tr>
-
+<!--Show active customers-->
 <% @active_customers.each do |customer| %>
   <tr>
     <td><%= link_to customer.name, customer_path(customer) %></td>
@@ -24,7 +24,7 @@
     <th></th>
     <th></th>
   </tr>
-
+<!--Show inactive customers-->
 <h4>Inactive Customers</h4>
 <% @inactive_customers.each do |customer| %>
   <tr>
