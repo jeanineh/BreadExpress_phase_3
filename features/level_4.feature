@@ -71,8 +71,8 @@ Feature: Manage orders
 
   Scenario: The order date is a link to order details
     When I go to the orders page
-    Then show me the page
     And I click on the link "02/14/15"
+     Then show me the page
     And I should see "Order Details"
     And I should see "Thanks for being a Bread Express customer since 2015"
     And I should see "Recipient"

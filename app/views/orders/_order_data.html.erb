@@ -5,11 +5,12 @@
     <th>Amount</th>
   </thead>
   <tbody>
+  <% for order in @orders.for_customer(@order.customer_id) %>
     <tr>
-      <td><%= @order.date.strftime('%x') %></td>
-      <td><%= sprintf "%.2f", @order.grand_total %></td>
+      <td><%= order.date.strftime('%x') %></td>
+      <td>$<%= sprintf "%.2f", order.grand_total %></td>
     </tr>
-
+  <% end %>
   </tbody>
 </table>
 
