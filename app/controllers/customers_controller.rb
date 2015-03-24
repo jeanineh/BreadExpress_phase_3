@@ -4,6 +4,8 @@ class CustomersController < ApplicationController
 
   def index 
      @customers = Customer.alphabetical.paginate(:page => params[:page]).per_page(10)
+     @active_customers = Customer.active.alphabetical.paginate(:page => params[:page]).per_page(10)
+     @inactive_customers = Customer.inactive.alphabetical.paginate(:page => params[:page]).per_page(10)
   end
 
   def create 

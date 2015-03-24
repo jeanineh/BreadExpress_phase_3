@@ -5,10 +5,10 @@
     <legend><%= controller.action_name.capitalize %> Order</legend>
       <div class="row">
         <div class="input-field col s6">
-          <%= f.association :customer, collection: Customer.active.all %>
+          <%= f.association :customer, collection: Customer.active.all.to_a %>
         </div>
         <div class="input-field col s6">
-          <%= f.association :address, collection: Address.active.all, label_method: :name %>
+          <%= f.association :address, collection: Address.active.all.to_a, label_method: :name %>
         </div>
       </div>
       <div class="row">

@@ -1,4 +1,22 @@
-<h3>Listing Active Customers</h3>
+<% if @customers.empty? %>
+ <h4>No active customers at this time</h4>
+<% else %>
+<h4>Listing Active Customers</h4>
+<table>
+  <tr>
+    <th>Customer</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @active_customers.each do |customer| %>
+  <tr>
+    <td><%= link_to customer.name, customer_path(customer) %></td>
+    <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
+    <td><%= link_to 'Destroy', customer, data: { confirm: 'Are you sure?' }, method: :delete %></td>
+  </tr>
+<% end %>
+</table>
 
 <table>
   <tr>
@@ -7,7 +25,8 @@
     <th></th>
   </tr>
 
-<% @customers.each do |customer| %>
+<h4>Inactive Customers</h4>
+<% @inactive_customers.each do |customer| %>
   <tr>
     <td><%= link_to customer.name, customer_path(customer) %></td>
     <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
@@ -22,5 +41,6 @@
 </span>
 
 <br />
-
+<% end %>
 <%= link_to 'New Customer', new_customer_path %>
+
