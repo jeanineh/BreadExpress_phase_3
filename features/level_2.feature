@@ -24,6 +24,7 @@ Feature: Manage customers
 
   Scenario: View all customers
     When I go to the customers page
+    Then show me the page
     Then I should see "Active Customers"
     And I should see "Name"
     And I should see "Phone"
