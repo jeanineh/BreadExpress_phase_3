@@ -5,6 +5,8 @@
 <table>
   <tr>
     <th>Name</th>
+    <th>Phone</th>
+    <th>Email</th>
     <th></th>
     <th></th>
   </tr>
@@ -12,6 +14,8 @@
 <% @active_customers.each do |customer| %>
   <tr>
     <td><%= link_to customer.name, customer_path(customer) %></td>
+    <td><%= number_to_phone(customer.phone) %></td>
+    <td><%= customer.email %></td>
     <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
     <td><%= link_to 'Destroy', customer, data: { confirm: 'Are you sure?' }, method: :delete %></td>
   </tr>
@@ -29,6 +33,8 @@
 <% @inactive_customers.each do |customer| %>
   <tr>
     <td><%= link_to customer.name, customer_path(customer) %></td>
+    <td><%= number_to_phone(customer.phone) %></td>
+    <td><%= customer.email %></td>
     <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
     <td><%= link_to 'Destroy', customer, data: { confirm: 'Are you sure?' }, method: :delete %></td>
   </tr>

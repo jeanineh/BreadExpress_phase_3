@@ -8,8 +8,8 @@
   </thead>
 <% for order in @current_orders %>
   <tr>
-    <td>&nbsp;<%= link_to order.date, order_path(order) %></td>
-	<td>&nbsp;<%= order.grand_total %></td>
+    <td>&nbsp;<%= link_to order.date.strftime('%x'), order_path(order) %></td>
+	<td>&nbsp;$<%= sprintf "%.2f", order.grand_total %></td>
   </tr>
 <% end %>
 </table>

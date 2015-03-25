@@ -5,7 +5,9 @@
       <p>A Bread Express customer since 2015</p>
     </td>
     <td>
-      <%= render partial: "current_orders" %>
+      <% if @current_orders.empty? == false %>
+        <%= render partial: "current_orders" %>
+      <% end %>
     </td>
   </tr>
 </table>

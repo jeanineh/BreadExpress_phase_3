@@ -11,7 +11,7 @@ class CustomersController < ApplicationController
   def create 
     @customer = Customer.new(customer_params)
     if @customer.save
-      redirect_to @customer, notice: "#{@customer.name} was added to the system."
+      redirect_to @customer, notice: "#{@customer.proper_name} was added to the system."
     else
       render action: 'new'
     end
@@ -31,7 +31,7 @@ class CustomersController < ApplicationController
 
   def update
     if @customer.update(customer_params)
-      redirect_to @customer, notice: "#{@customer.name} was revised in the system."
+      redirect_to @customer, notice: "#{@customer.proper_name} was revised in the system."
     else
       render action: 'edit'
     end

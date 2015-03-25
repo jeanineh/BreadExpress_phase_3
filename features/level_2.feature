@@ -24,7 +24,6 @@ Feature: Manage customers
 
   Scenario: View all customers
     When I go to the customers page
-    Then show me the page
     Then I should see "Active Customers"
     And I should see "Name"
     And I should see "Phone"
@@ -45,6 +44,7 @@ Feature: Manage customers
 
   Scenario: View customer details
     When I go to Alex Egan details page
+    Then show me the page
     Then I should see "A Bread Express customer since 2015"
     And I should see "Alex Egan"
     And I should see "Phone"
