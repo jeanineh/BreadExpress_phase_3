@@ -21,6 +21,7 @@ before_action :set_order, only: [:show, :edit, :update, :destroy]
     @order = Order.new(order_params)
     @order.date = Date.today
     if @order.save
+      @order.pay
       redirect_to @order, notice: "Thank you for ordering from Bread Express."
     else 
       render action: 'new'
@@ -47,6 +48,6 @@ before_action :set_order, only: [:show, :edit, :update, :destroy]
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:date, :customer_id, :address_id, :grand_total)
+      params.require(:order).permit(:date, :customer_id, :address_id, :grand_total, :payment_receipt)
     end
 end

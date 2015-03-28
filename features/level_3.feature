@@ -45,7 +45,6 @@ Feature: Manage addresses
   
   Scenario: The address customer name is a link to customer details
     When I go to the addresses page
-    Then show me the page
     And I click on the link "Ryan Flood"
     And I should see "Phone"
     And I should see "Order History"

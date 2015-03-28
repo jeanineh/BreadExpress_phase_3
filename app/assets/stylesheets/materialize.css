@@ -1,40 +1,48 @@
+/*colors:  FF7F3A monochromatic or FF8D61, FFCAAF complementary
 /*!
  * Materialize v0.95.3 (http://materializecss.com)
  * Copyright 2014-2015 Materialize
  * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
  */
+
+.jeanine-logo {
+  width: 9%;
+  height: 90%;
+  padding: 5px;
+}
+
 .materialize-red.lighten-5 {
-  background-color: #fdeaeb !important; }
+  background-color: #588C7E !important; }
 
 .materialize-red-text.text-lighten-5 {
-  color: #fdeaeb !important; }
+  color: #588C7E !important; }
 
 .materialize-red.lighten-4 {
-  background-color: #f8c1c3 !important; }
+  background-color: #F2E394 !important; }
 
 .materialize-red-text.text-lighten-4 {
-  color: #f8c1c3 !important; }
+  color: #F2E394 !important; }
 
 .materialize-red.lighten-3 {
-  background-color: #f3989b !important; }
+  background-color: #F2AE72 !important; }
 
 .materialize-red-text.text-lighten-3 {
-  color: #f3989b !important; }
+  color: #F2AE72 !important; }
 
 .materialize-red.lighten-2 {
-  background-color: #ee6e73 !important; }
+  background-color: #D96459 !important; }
 
 .materialize-red-text.text-lighten-2 {
-  color: #ee6e73 !important; }
+  color: #D96459 !important; }
 
 .materialize-red.lighten-1 {
-  background-color: #ea454b !important; }
+  background-color: #8C4646 !important; }
 
 .materialize-red-text.text-lighten-1 {
-  color: #ea454b !important; }
+  color: #8C4646 !important; }
 
 .materialize-red {
-  background-color: #e51c23 !important; }
+  background-color: #588C7E !important; }
 
 .materialize-red-text {
   color: #e51c23 !important; }
@@ -94,7 +102,7 @@
   color: #EF5350 !important; }
 
 .red {
-  background-color: #F44336 !important; }
+  background-color: #588C7E !important; }
 
 .red-text {
   color: #F44336 !important; }
@@ -5056,13 +5064,14 @@ span.badge {
 
 nav {
   color: #fff;
-  background-color: #ee6e73;
+  background-color: #F2E394;
   width: 100%;
   height: 56px;
   line-height: 56px;
   overflow: hidden; }
+  
   nav a {
-    color: #fff; }
+    color: #D96459; }
   nav .nav-wrapper {
     position: relative;
     height: 100%; }
@@ -5077,14 +5086,14 @@ nav {
     position: relative;
     z-index: 1;
     height: 56px;
-    color: #fff; }
+    color: #D96459; }
     nav a.button-collapse i {
       font-size: 2.7rem;
       height: 56px;
       line-height: 56px; }
   nav .brand-logo {
     position: absolute;
-    color: #fff;
+    color: #8C6464;
     display: inline-block;
     font-size: 2.1rem;
     padding: 0; }
@@ -5122,7 +5131,7 @@ nav {
         background-color: rgba(0, 0, 0, 0.1); }
     nav ul a {
       font-size: 1rem;
-      color: #fff;
+      color: #8C4646;
       display: inline-block;
       padding: 0px 15px; }
     nav ul.left {
@@ -5800,7 +5809,7 @@ ul.tabs li.tab {
     .dropdown-content li > a, .dropdown-content li > span {
       display: block;
       padding: 1rem 1rem;
-      color: #26a69a; }
+      color: #8C4646; }
 
 /*!
  * Waves v0.6.0
