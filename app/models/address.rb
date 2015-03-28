@@ -26,6 +26,10 @@ class Address < ActiveRecord::Base
     Address.where(customer_id: self.customer_id, recipient: self.recipient, zip: self.zip).size == 1
   end
 
+  def name
+    "#{self.recipient} : #{self.street_1}"
+  end
+
   # Other methods
   private
   def customer_is_active_in_system
@@ -42,8 +46,5 @@ class Address < ActiveRecord::Base
     end
   end
 
-  def name
-    "#{self.recipient} : #{self.street_1}"
-  end
 
 end

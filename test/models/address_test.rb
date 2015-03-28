@@ -28,6 +28,12 @@ class AddressTest < ActiveSupport::TestCase
       destroy_addresses
     end
 
+    should "have a name method that lists addresses as recipient : street" do
+      #build an address
+      my_address = FactoryGirl.build(:address, customer: @alex, recipient: "Jeanine", street_1: "5 Fifth Avenue")
+      assert_equal "Jeanine : 5 Fifth Avenue", my_address.name
+    end
+    
     should "show that by_recipient places addresses in alphabetical order" do
       assert_equal ["Alex Egan", "Anthony Corletti", "Jeff Egan", "Melanie Freeman", "Ryan Flood", "Zach Egan"], Address.by_recipient.all.map(&:recipient)
     end
