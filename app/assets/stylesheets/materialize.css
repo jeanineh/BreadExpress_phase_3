@@ -18,15 +18,16 @@
 }
 
 .side-bar-box {
-  background-color: #D96459;
+  background-color: #F2E394;
   height: 10%;
 }
 
 .side-bar-header {
-  color: #fff;
+  color: #8C4646;
   font-size: 1.2em;
   text-align: center;
   vertical-align: center;
+  font-weight: bold;
 }
 .side-bar-option {
   padding: 1rem;
