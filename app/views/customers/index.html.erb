@@ -25,13 +25,14 @@
 <% end %>
 </table>
 
+<!--Show inactive customers-->
+<% if @inactive_customers.empty? == false %>
 <table class="hoverable">
   <tr>
-    <th>Customer</th>
-    <th></th>
-    <th></th>
+    <th>Name</th>
+    <th>Phone</th>
+    <th>Email</th>
   </tr>
-<!--Show inactive customers-->
 <h5>Inactive Customers</h5>
 <% @inactive_customers.each do |customer| %>
   <tr>
@@ -41,6 +42,7 @@
     <td><%= link_to 'Edit', edit_customer_path(customer), :class => 'btn materialize-red lighten-2' %></td>
     <td><%= link_to 'Destroy', customer, data: { confirm: 'Are you sure?' }, :class => 'btn materialize-red lighten-2', method: :delete %></td>
   </tr>
+<% end %>
 <% end %>
 </table>
 <br />

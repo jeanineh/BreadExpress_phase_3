@@ -38,7 +38,7 @@
     </div>
   </nav>
   </container>
-  <div class="container">
+  <div class="home-container">
     <% flash.each do |name, msg| %>
       <div class="alert-box <%= name == :notice ? "success" : "warning" %> radius">
         <a href="#" class="close">&times;</a>
@@ -46,19 +46,17 @@
       </div>
     <% end %>
     <div class="row">
-      <div class="col s12 m9 ">
-        <!-- MAIN CONTENT GOES HERE -->
-        
+      <!-- SIDEBAR GOES HERE -->
+      <div class="col s12 m3">
+        <%=render partial: 'partials/quick_links' %>
+      </div>
+      <!-- MAIN CONTENT GOES HERE -->
+      <div class="col s12 m9">
         <%= yield %>
         <%= javascript_include_tag "application" %>
-
       </div>
 
       <br><br><br>
-      <div class="col s12 m3 offset-s9">
-        <%=render partial: 'partials/quick_links' %>
-      </div>
-      
     </div>
   </div>
 </body>

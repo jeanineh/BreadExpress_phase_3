@@ -1,12 +1,22 @@
+<div class="side-bar-box z-depth-2">
+  <h4 class="side-bar-header"> GET STARTED </h4>
+</div>
 
 <div>
-  <h3>Quick Links</h3>
-  <ul>Switch to:
-    <li><%= link_to 'Customers', customers_path %></li>
-    <li><%= link_to 'Addresses', addresses_path %></li>
-    <li><%= link_to 'Orders', orders_path %></li>
-    <li><%= link_to 'Add a New Customer', new_customer_path %></li>
-    <li><%= link_to 'Add a New Address', new_address_path %></li>
-    <li><%= link_to 'Add a New Order', new_order_path %></li>
+  <ul class="collapsible" data-collapsible="accordion">
+      <div class="collapsible-header"><i class="mdi-action-account-circle"></i>Customers</div>
+      <div class="collapsible-body side-bar-option"><%= link_to 'View Customers', customers_path, :class=>" materialize-red-text text-lighten-2" %></div>
+      <div class="collapsible-body side-bar-option"><%= link_to 'Add a New Customer', new_customer_path, :class=>" materialize-red-text text-lighten-2" %></div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="mdi-maps-place"></i>Addresses</div>
+      <div class="collapsible-body side-bar-option"><%= link_to 'View Addresses', addresses_path, :class=>" materialize-red-text text-lighten-2" %></div>
+      <div class="collapsible-body side-bar-option"><%= link_to 'Add a New Address', new_address_path, :class=>" materialize-red-text text-lighten-2" %></div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="mdi-maps-local-cafe"></i>Orders</div>
+      <div class="collapsible-body side-bar-option"><%= link_to 'View Orders', orders_path, :class=>" materialize-red-text text-lighten-2" %></div>
+      <div class="collapsible-body side-bar-option"><%= link_to 'Add a New Order', new_order_path, :class=>" materialize-red-text text-lighten-2" %></div>
+    </li>
   </ul>
 </div>

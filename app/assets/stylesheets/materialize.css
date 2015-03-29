@@ -11,8 +11,30 @@
   padding: 5px;
 }
 
+.home-container {
+  padding: 1rem;
+  margin-left: 5%;
+  margin-right: 17%;
+}
+
+.side-bar-box {
+  background-color: #D96459;
+  height: 10%;
+}
+
+.side-bar-header {
+  color: #fff;
+  font-size: 1.2em;
+  text-align: center;
+  vertical-align: center;
+}
+.side-bar-option {
+  padding: 1rem;
+  text-align: center;
+}
+
 .promo-label {
-  font-size: 1.1em;
+  font-size: 1em;
   color: #8C4646;
   font-weight:bold;
 }
@@ -5446,12 +5468,12 @@ small {
   background-clip: padding-box; }
   .card .card-title {
     color: #fff;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 300; }
     .card .card-title.activator {
       cursor: pointer; }
   .card a {
-    color: #ffab40;
+    color: #F2E394;
     margin-right: 20px;
     -webkit-transition: color 0.3s ease;
     -moz-transition: color 0.3s ease;

@@ -1,6 +1,6 @@
 
 <h4><%= @customer.first_name %> <%= @customer.last_name %></h4>
-<table class="hoverable">
+<table class="responsive-table">
   <tr><td><b>Phone:&nbsp;&nbsp;</b> <%= number_to_phone(@customer.phone) %></td></tr>
   <tr><td><b>Email:&nbsp;&nbsp;</b> <%= mail_to @customer.email, @customer.email, encode: "javascript" %></td></tr>
   <tr><td><b>Active with BreadExpress?&nbsp;&nbsp;</b><%= @customer.active ? "Yes" : "No" %></td></tr>
