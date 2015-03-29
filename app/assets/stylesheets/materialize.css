@@ -6,6 +6,11 @@
  */
 
 /* my classes */
+#home {
+  background-image: url("background.jpg");
+}
+
+
 .jeanine-logo {
   width: 9%;
   height: 90%;

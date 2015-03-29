@@ -1,5 +1,6 @@
 <% if @addresses.empty? %>
  <h4 class="materialize-red-text text-lighten-1 center-align">There are no active addresses at this time.</h4><br><br>
+ <p>You don't have any addresses. Add one now!<br><%= link_to "Add A New Address", new_address_path, :class => 'btn materialize-red lighten-2' %></p>
 <% else %>
 <h3 class="materialize-red-text text-lighten-1">Addresses</h3>
 
@@ -34,6 +35,7 @@
   <% end %>
 </table>
 <!--Listing inactive addresses -->
+<% if @inactive_addresses.empty? == false %>
 <br><h4>Inactive Addresses</h4><br />
 <table class="hoverable">
   <thead>
@@ -62,6 +64,7 @@
       <td><%= link_to 'Delete', address, data: { confirm: 'Are you sure?' }, :class => 'btn materialize-red lighten-3', method: :delete %></td> 
     </tr>
   <% end %>
+  <% end %>
 </table>
 <p class="supertiny"></p>
 
@@ -70,4 +73,4 @@
 <%= will_paginate @addresses, previous_label: "Previous&nbsp;", next_label: "&nbsp;Next" %>
 </span>
 <% end %>
-<p>You don't have any addresses. Add one now!<br><%= link_to "Add A New Address", new_address_path, :class => 'btn materialize-red lighten-2' %></p>
+
