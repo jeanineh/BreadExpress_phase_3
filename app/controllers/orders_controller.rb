@@ -6,15 +6,15 @@ before_action :set_order, only: [:show, :edit, :update, :destroy]
   end
 
   def index
-  	@orders = Order.chronological.paginate(:page => params[:page]).per_page(10)
+    @orders = Order.chronological.paginate(:page => params[:page]).per_page(10)
   end
 
   def new
-  	@order = Order.new
+    @order = Order.new
   end
 
   def show
-  	@orders = Order.chronological.paginate(:page => params[:page]).per_page(10)
+    @orders = Order.chronological.paginate(:page => params[:page]).per_page(10)
   end
 
   def create

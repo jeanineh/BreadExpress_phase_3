@@ -12,7 +12,7 @@
 <% for order in @current_orders %>
   <tr>
     <td>&nbsp;<%= link_to order.date, order_path(order) %></td>
-	  <td>&nbsp;<%= order.grand_total %></td>
+    <td>&nbsp;<%= order.grand_total %></td>
   </tr>
 <% end %>
 </table>

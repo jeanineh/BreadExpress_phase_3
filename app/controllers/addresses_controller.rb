@@ -6,21 +6,21 @@ class AddressesController < ApplicationController
 
   def index
     @addresses = Address.by_customer.paginate(page: params[:page]).per_page(10)
-  	@active_addresses = Address.active.by_customer.paginate(page: params[:page]).per_page(10)
-  	@inactive_addresses = Address.inactive.by_customer.paginate(page: params[:page]).per_page(10)
+    @active_addresses = Address.active.by_customer.paginate(page: params[:page]).per_page(10)
+    @inactive_addresses = Address.inactive.by_customer.paginate(page: params[:page]).per_page(10)
   end
 
   def new
-  	@address = Address.new
+    @address = Address.new
   end
 
   def show
   end
 
   def create
-  	@address = Address.new(address_params)
-  	if @address.save
-  	  redirect_to @address, notice: "Address was added to the system."
+    @address = Address.new(address_params)
+    if @address.save
+      redirect_to @address, notice: "Address was added to the system."
     else
       render action: 'new'
     end

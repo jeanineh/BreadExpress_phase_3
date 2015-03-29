@@ -5,6 +5,7 @@
  * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
  */
 
+/* my classes */
 .jeanine-logo {
   width: 9%;
   height: 90%;
@@ -50,6 +51,7 @@
   font-size: 0.9em;
   font-weight:bold;
 }
+/*materialize-red lighten 5 to 1 are my custom colors*/
 .materialize-red.lighten-5 {
   background-color: #588C7E !important; }
 
