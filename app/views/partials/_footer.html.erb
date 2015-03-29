@@ -1,14 +1,35 @@
-<p class="supertiny">&nbsp;</p>
 
-<div id="footer">
-  <%= link_to 'Home', home_path %>&nbsp;&nbsp;::&nbsp;&nbsp;
-  <%= link_to 'About BreadExpress', about_path %>&nbsp;&nbsp;::&nbsp;&nbsp;
-  <%= link_to 'Contact Us', contact_path %>&nbsp;&nbsp;::&nbsp;&nbsp;
-  <%= link_to 'Privacy Policy', privacy_path %>
-  <br /><br />
+<div id="footer" class="materialize-red lighten-4">	
+  <div class="row">
+    <div class="col s4">
+        <h5 class="promo-label">Our Company</h5>
+        <%= link_to 'About Bread Express', about_path, :class=>"promo-links materialize-red-text text-lighten-2" %><br />
+        <a class="promo-links materialize-red-text text-lighten-2" href="#!">Visit Us</a><br/>
+        <a class="promo-links materialize-red-text text-lighten-2" href="#!">Products</a>
+        
+    </div>
+    <div class="col s4">
+        <h5 class="promo-label">How Can We Help?</h5>
+        <%= link_to 'Contact Us', contact_path, :class=>"promo-links materialize-red-text text-lighten-2" %><br/>
+        <a class="promo-links materialize-red-text text-lighten-2" href="#!">FAQ</a>
+    </div>
+    <div class="col s4">
+        <h5 class="promo-label">Connect</h5>
+        <div class="container">
+          <%= link_to image_tag 'twitter.png', :class=>"social-media-icon" %>
+          <%= link_to image_tag 'facebook.png', :class=>"social-media-icon" %>
+          <%= link_to image_tag 'youtube.png', :class=>"social-media-icon" %>
+          <%= link_to image_tag 'pinterest.png', :class=>"social-media-icon" %>
+          <%= link_to image_tag 'instagram.png', :class=>"social-media-icon" %>
+        </div>
+    </div>
+
+  </div>
   <div id="copy">
-    Webmaster: <%= mail_to "jeanineh@cmu.edu", :encode => "javascript" %> 
-    &nbsp;&nbsp;&copy 2015
+    <p class="materialize-red-text text-lighten-1">
+      Webmaster: <%= mail_to "jeanineh@cmu.edu", "jeanineh@cmu.edu", :class=>"materialize-red-text text-lighten-2", encode: "javascript" %> &nbsp;&nbsp;Copyright &copy 2015 Bread Express. All rights reserved. |
+      <%= link_to 'Privacy Policy', privacy_path, :class=>"promo-links materialize-red-text text-lighten-2"%>
+    </p> 
   </div>
 
 </div>

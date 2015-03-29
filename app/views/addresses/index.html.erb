@@ -18,7 +18,7 @@
       <td><%= address.recipient %></td>
       <td><%= address.street_1 %>
           <% unless address.street_2 == nil %>
-            <%= address.street_2 %>
+            <br><%= address.street_2 %>
           <% end %>
           <br><%= address.city %>, <%= address.state %> <%= address.zip %>
       </td>
@@ -48,7 +48,7 @@
       <td><%= address.recipient %></td>
       <td><%= address.street_1 %>
           <% unless address.street_2 == nil %>
-            <%= address.street_2 %>
+            <br><%= address.street_2 %>
           <% end %>
           <br><%= address.city %>, <%= address.state %> <%= address.zip %>
       </td>
@@ -59,7 +59,7 @@
           <% end %>
       </td>
       <td><%= link_to 'Edit' , edit_address_path(address), :class => 'btn materialize-red lighten-5' %></td>
-      <td><%= link_to 'Destroy', address, data: { confirm: 'Are you sure?' }, :class => 'btn materialize-red lighten-3', method: :delete %></td> 
+      <td><%= link_to 'Delete', address, data: { confirm: 'Are you sure?' }, :class => 'btn materialize-red lighten-3', method: :delete %></td> 
     </tr>
   <% end %>
 </table>

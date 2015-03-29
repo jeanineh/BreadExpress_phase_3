@@ -11,6 +11,22 @@
   padding: 5px;
 }
 
+.promo-label {
+  font-size: 1.1em;
+  color: #8C4646;
+  font-weight:bold;
+}
+
+.social-media-icon {
+  width: 15%;
+  height: 15%;
+  background-color: #D96459;
+}
+
+.promo-links {
+  font-size: 0.9em;
+  font-weight:bold;
+}
 .materialize-red.lighten-5 {
   background-color: #588C7E !important; }
 
