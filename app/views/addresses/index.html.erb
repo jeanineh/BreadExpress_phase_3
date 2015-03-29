@@ -1,5 +1,5 @@
 <% if @addresses.empty? %>
- <h4>There are no active addresses at this time.</h4>
+ <h4>There are no active addresses at this time.</h4><br><br>
 <% else %>
 <h3 class="materialize-red-text text-lighten-1">Addresses</h3>
 
@@ -70,4 +70,4 @@
 <%= will_paginate @addresses, previous_label: "Previous&nbsp;", next_label: "&nbsp;Next" %>
 </span>
 <% end %>
-<p><strong><%= link_to "Add A New Address", new_address_path %></strong></p>
+<p>You don't have any addresses. Add one now!<br><%= link_to "Add A New Address", new_address_path, :class => 'btn materialize-red lighten-3' %></p>
