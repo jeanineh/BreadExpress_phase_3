@@ -11,6 +11,6 @@ class HomeController < ApplicationController
   def privacy
   end
 
-  def search
+  def products
   end
 end
