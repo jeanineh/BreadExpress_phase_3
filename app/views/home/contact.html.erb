@@ -1,3 +1,19 @@
 <div id="main_content">
-<h1>Contact</h1>
+<div class="row">
+  <div class="col s12 ">
+    <div class="card materialize-red lighten-3">
+      <div class="card-image">
+        <%= image_tag 'customerservice.jpg' %>
+      </div>
+      <div class="card-content white-text">
+        <p> Want to ask a question or share feedback? Here you'll find several different ways to speak with a member of our team.<br><br>Email us at&nbsp;&nbsp; <%= mail_to "jeanineh@cmu.edu", "breadexpress@bread.com", :class=>"materialize-red-text text-lighten-2", encode: "javascript" %><br>Call us at 777-888-9999<br><br>We look forward to hearing from you!</p>
+      </div>
+      <div class="card-action">
+        <a href="#">About Us</a>
+        <a href='#'>Visit Us</a>
+      </div>
+    </div>
+  </div>
 </div>
+</div>
+
