@@ -5092,6 +5092,7 @@ nav {
       height: 56px;
       line-height: 56px; }
   nav .brand-logo {
+    font-family: 'Aclonica', sans-serif;
     position: absolute;
     color: #8C6464;
     display: inline-block;
@@ -5809,7 +5810,7 @@ ul.tabs li.tab {
     .dropdown-content li > a, .dropdown-content li > span {
       display: block;
       padding: 1rem 1rem;
-      color: #8C4646; }
+      color: #F2AE72; }
 
 /*!
  * Waves v0.6.0

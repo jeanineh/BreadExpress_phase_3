@@ -1,42 +1,45 @@
 <% if @customers.empty? %>
  <h4>No active customers at this time</h4>
+ 
 <% else %>
-<h4>Listing Active Customers</h4>
-<table>
-  <tr>
+<h3 class="materialize-red-text text-lighten-1"> Customers </h3>
+
+<h5>Listing Active Customers</h5>
+<table class="hoverable">
+  <thead>
     <th>Name</th>
     <th>Phone</th>
     <th>Email</th>
     <th></th>
     <th></th>
-  </tr>
+  </thead>
 <!--Show active customers-->
 <% @active_customers.each do |customer| %>
   <tr>
     <td><%= link_to customer.name, customer_path(customer) %></td>
     <td><%= number_to_phone(customer.phone) %></td>
     <td><%= customer.email %></td>
-    <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
-    <td><%= link_to 'Destroy', customer, data: { confirm: 'Are you sure?' }, method: :delete %></td>
+    <td><%= link_to 'Edit', edit_customer_path(customer), :class => 'btn materialize-red lighten-5' %></td>
+    <td><%= link_to 'Destroy', customer, data: { confirm: 'Are you sure?' }, :class => 'btn materialize-red lighten-3',  method: :delete %></td>
   </tr>
 <% end %>
 </table>
 
-<table>
+<table class="hoverable">
   <tr>
     <th>Customer</th>
     <th></th>
     <th></th>
   </tr>
 <!--Show inactive customers-->
-<h4>Inactive Customers</h4>
+<h5>Inactive Customers</h5>
 <% @inactive_customers.each do |customer| %>
   <tr>
     <td><%= link_to customer.name, customer_path(customer) %></td>
     <td><%= number_to_phone(customer.phone) %></td>
     <td><%= customer.email %></td>
-    <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
-    <td><%= link_to 'Destroy', customer, data: { confirm: 'Are you sure?' }, method: :delete %></td>
+    <td><%= link_to 'Edit', edit_customer_path(customer), :class => 'btn materialize-red lighten-2' %></td>
+    <td><%= link_to 'Destroy', customer, data: { confirm: 'Are you sure?' }, :class => 'btn materialize-red lighten-2', method: :delete %></td>
   </tr>
 <% end %>
 </table>
@@ -48,5 +51,5 @@
 
 <br />
 <% end %>
-<%= link_to 'New Customer', new_customer_path %>
+<%= link_to 'New Customer', new_customer_path, :class => 'btn materialize-red lighten-2' %>
 

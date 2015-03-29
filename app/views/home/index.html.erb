@@ -1,5 +1,5 @@
 
-<div class="container">
+<div class="row s12">
 </br>
   <div class="slider">
     <ul class="slides">
@@ -8,29 +8,33 @@
         <div class="caption center-align">
           <h3>Welcome to Bread Express</h3>
           <h5 class="light grey-text text-lighten-3">Delicious baked goods.</h5>
+          <%= link_to 'BECOME A CUSTOMER', new_customer_path, :class => 'btn materialize-red lighten-2' %>
+          <%= link_to 'MAKE AN ORDER', new_order_path, :class => 'btn materialize-red lighten-5' %>
         </div>
       </li>
       <li>
         <%= image_tag 'bread2.jpg' %> <!-- random image -->
         <div class="caption left-align">
-          <h3>Left Aligned Caption</h3>
-          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+          <h3>Baked fresh every day.</h3>
+          <h5 class="light grey-text text-lighten-3">We work hard to deliver quality bread.</h5>
         </div>
       </li>
       <li>
         <%= image_tag 'bread3.jpg' %>
         <div class="caption right-align">
-          <h3>Right Aligned Caption</h3>
-          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+          <h3>We have muffins.</h3>
+          <h5 class="light grey-text text-lighten-3">You'll love our muffins.</h5>
+          <
         </div>
       </li>
       <li>
-        <%= image_tag 'pasttry2.jpg' %>
+        <%= image_tag 'pastry.jpg' %>
         <div class="caption center-align">
-          <h3>This is our big Tagline!</h3>
-          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+          <h3>Our new pastry products!</h3>
+          <h5 class="light grey-text text-lighten-3">A delicious day is just a click away. Order today.</h5>
         </div>
       </li>
     </ul>
   </div>
 </div>
+

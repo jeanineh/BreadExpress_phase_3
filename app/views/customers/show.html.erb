@@ -1,18 +1,30 @@
-<table>
-  <tr>
-    <td>
-      <%= render partial: "customer_data" %>
-      <p>A Bread Express customer since 2015</p>
-    </td>
-    <td>
-      <% if @current_orders.empty? == false %>
-        <%= render partial: "current_orders" %>
-      <% end %>
-    </td>
-  </tr>
-</table>
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card materialize-red lighten-2">
+      <div class="card-content white-text">
+        <span class="card-title">Customer Information</span>
+        <%= render partial: "customer_data" %><p>A Bread Express customer since 2015.</p>
+      </div>
+      <div class="card-action">
+        <%= link_to "Edit your information", edit_customer_path(@customer), { :class=>"materialize-red-text text-lighten-3"} %><br />
+        <%= link_to "Add a new address", new_address_path(@customer), { :class=>"materialize-red-text text-lighten-3"} %>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 m6">
+    <% if @current_orders.empty? == false %>
+      <%= render partial: "current_orders" %>
+    <% else %>
+    <br /><br />
+      <p>You have no orders at the moment. Would you like to create one?</p>
+      <%= link_to 'MAKE AN ORDER', new_order_path, :class => 'btn materialize-red lighten-5' %>
+    <% end %>
+  </div>
+</div>
+     
+    
 <p>&nbsp;
-  <%= link_to "Edit", edit_customer_path(@customer) %> |
+  <%= link_to "Edit", edit_customer_path(@customer) %> 
   <%= link_to "Destroy", @customer, method: :delete, data: { confirm: 'Are you sure you wish to delete this information?' } %> |
   <%= link_to "View All", customers_path %>
 </p>
